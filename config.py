@@ -3,7 +3,8 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
-    SECRET_KEY = r'\xa7\xdb\xfd\xcetp\xf2\x9df+\xe20\x92\x1f\x18\x90\xcb\x0b\xd8RY$3\x8b'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    #r'\xa7\xdb\xfd\xcetp\xf2\x9df+\xe20\x92\x1f\x18\x90\xcb\x0b\xd8RY$3\x8b'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     
     # 配置邮件信息
@@ -45,7 +46,7 @@ config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
     'production': ProductionConfig,
-    
+
     'default': DevelopmentConfig
 }
 
