@@ -16,5 +16,39 @@ class Config(object):
         pass
 
 
+# 定义开发环境类
+class DevelopmentConfig(Config):
+    DEBUG = True
+    # 邮箱
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    # MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    # MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    MAIL_USERNAME = "zzz1171284619@gmail.com"
+    MAIL_PASSWORD = "zcf.19970125"
+
+    #数据库
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') 
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:12345679@localhost:3306/my_blog'
+
+
+class TestingConfig(Config):
+    TESTING = True
+   # SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') 
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:12345679@localhost:3306/my_blog'
+
+class ProductionConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+
+config = {
+    'development': DevelopmentConfig,
+    'testing': TestingConfig,
+    'production': ProductionConfig,
+    
+    'default': DevelopmentConfig
+}
+
+
 
 
