@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #-*-coding:utf-8-*-
-datetime import datetime   # 引入时间模块
+from datetime import datetime   # 引入时间模块
 from flask import render_template, session, redirect, url_for
 
 # 引入本地模块
@@ -9,13 +9,6 @@ from .forms import NameForm
 from .. import db
 from ..models import User
 
-
-
-# 定义表单
-class NameForm(Form):
-    name = StringField('what is your name?', validators= [Required()])
-    # required：必要的，必须的
-    submit = SubmitField('submit')
 
 
 @main.route('/', methods = ['GET', 'POST'])
