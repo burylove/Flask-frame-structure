@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#-*-coding:utf-8-*-
 from flask import Flask, render_template    # 引入flask及模板
 from flask_bootstrap import Bootstrap   # 引入bootstrap模板
 from flask_mail import Mail     #引入邮件扩展
