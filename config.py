@@ -32,17 +32,17 @@ class DevelopmentConfig(Config):
 
     #数据库
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-        'mysql://root:12345679@localhost:3306/h1'
+        'mysql://root:12345679@localhost:3306/h2'
 
 
 class TestingConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
-        'mysql://root:12345679@localhost:3306/h1'
+        'mysql://root:12345679@localhost:3306/h2'
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'mysql://root:12345679@localhost:3306/h1'
+        'mysql://root:12345679@localhost:3306/h2'
 
 config = {
     'development': DevelopmentConfig,
