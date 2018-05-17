@@ -1,2 +1,2 @@
 # my_blog
-使用flask实现个人博客
+使用flask的基本框架结构
